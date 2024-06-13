@@ -1,0 +1,18 @@
+.common-layout {
+  padding-left: 96px;
+  padding-right: 96px;
+  background-color: #000000;
+}
+
+@media (max-width: 600px) {
+  .common-layout {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 1028px) {
+  .common-layout {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
