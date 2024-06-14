@@ -1,25 +1,19 @@
-import ImageGallery from "./components/ImageGallery";
-import Header from "./components/header";
-import CardContainer from "./components/CardContainer";
-import Footer from "./components/Footer/Footer";
-import WatchBanner from "./components/WatchBanner";
-import TimepieceSection from "./components/TimepieceSection";
-import WatchDisplay from "./components/WatchDisplay";
-import Commonlayout from "./layout/commonlayout";
+import { Route, Routes } from "react-router-dom";
+import DynamicForm from "./components/dynamicForm";
+import { ToastContainer } from "react-toastify";
+import { Suspense, lazy } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function App() {
+  const WatchPage = lazy(() => import("../src/components/homepage/index"));
   return (
-    <div>
-      <Header />
-      <WatchBanner />
-      <Commonlayout>
-        <CardContainer />
-        <TimepieceSection />
-        <WatchDisplay />
-        <ImageGallery />
-        <Footer />
-      </Commonlayout>
-    </div>
+    <Suspense fallback={<CircularProgress />}>
+      <ToastContainer />
+      <Routes>
+        <Route path="/" element={<DynamicForm />} />
+        <Route path="watch-page" element={<WatchPage />} />
+      </Routes>
+    </Suspense>
   );
 }
 
