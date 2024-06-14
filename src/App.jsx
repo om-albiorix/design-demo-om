@@ -7,7 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 function App() {
   const WatchPage = lazy(() => import("../src/components/homepage/index"));
   return (
-    <Suspense fallback={<CircularProgress />}>
+    <Suspense fallback={<CircularProgress className="flex justify-center" />}>
       <ToastContainer />
       <Routes>
         <Route path="/" element={<DynamicForm />} />

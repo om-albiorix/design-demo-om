@@ -46,7 +46,7 @@ const DynamicForm = () => {
   return (
     <>
       <div className="bg-common-bg min-h-screen flex items-center justify-center">
-        <div className="w-1/3">
+        <div className="lg:w-1/3 sm:w-full md:w-full sm:p-4">
           <Paper elevation={3} className="p-5">
             <h1 className="text-center text-3xl font-bold">
               Fill up form to see luxury watches
